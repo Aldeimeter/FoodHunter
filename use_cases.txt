@@ -1,0 +1,40 @@
+1. Sign Up / Sign In
+  1.1 Sign up 
+    - Username
+    - Email
+    - Password
+    - Password Again
+2. Home screen
+  - Overview of daily calories burnt, calories consumed, time spent moving, body rating, bmi, water score.
+3.Exercises plan
+  - Log your exercise, can create a training plan 
+  3.1
+  - Each train has its own exercises -> e.g., push ups 20 * 4, etc.
+  3.2 
+  - Screen to add an exercise, e.g., -> add biceps exercise.
+  - Favorite exercises
+4. Training
+  - Start training
+  - Exercises -> e.g., train, interval from app, another exercise, etc.
+5. Nutrition
+  - Add meal
+  - Create meal
+  - Delete meal
+  - Change meal 
+6. Settings
+  - Theme
+  - Visually impaired
+  - Units
+  - Language
+  - Permissions
+  - Version
+  - Terms of Service
+7. Profile
+  - Weight
+  - Height
+  - Age
+  - Profile Photo
+  - Goals 
+  - Change Data 
+  - Delete Profile
+
