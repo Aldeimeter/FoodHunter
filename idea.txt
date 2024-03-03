@@ -5,10 +5,9 @@ A comprehensive health and wellness tracker that allows users to monitor various
 
 Functional Screens:
     Splash Screen - A welcoming screen with app branding.
-    Dashboard/Home Screen - Overview of daily health and wellness metrics, quick access to track diet, exercise and mood.
+    Dashboard/Home Screen - Overview of daily health and wellness metrics, quick access to track diet, exercise.
     Health & Fitness Tracking Screen - Users can log exercises, set goals, and track progress. Supports CRUD operations for fitness routines.
     Nutrition Tracking Screen - Allows users to log food intake, view nutritional information, and track dietary goals. Supports CRUD operations for dietary logs.
-    Mood Tracking Screen - Users can record daily moods, see statistics.
     Settings & Personalization Screen - Manage account settings, app preferences (like dark mode, language), and view health tips 
 
 Mandatory Optional Project Components (Choosing at Least 3):
@@ -16,11 +15,8 @@ Mandatory Optional Project Components (Choosing at Least 3):
     Accessibility Support: Implement content reading for visually impaired users and ensure sufficient contrast 
     Location-Based Services: Use GPS for outdoor exercise tracking 
     Firebase Services 
-    or some sensors -> e.g., microphone to record sleep noises as a part of heath 
+    Camera to scan bar-codes
 Bonus Tasks Potential:
 
     Test Coverage: Implement unit tests for the business logic, UI tests for each screen, and E2E tests for critical user journeys.
     Performance Analytics: Use Android Studio's built-in tools to monitor app performance, including memory usage, energy consumption, and network usage.
-    Documentation via anotations: Pozreme potom ako to bude s tymi anotaciami v Kotline, resp. React Native 
-
-
