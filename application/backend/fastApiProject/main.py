@@ -6,7 +6,7 @@ from sqlalchemy import Table, Column, Integer, String
 app = FastAPI()
 ##app.include_router(router.py)
 
-app_database = "postgresql://tvorca:GaX3jpTCAv-?ftKo@localhost:5432/application"
+app_database = "postgresql://postgres:GaX3jpTCAv-?ftKo@34.118.17.194:5432/application"
 engine = create_engine(app_database)
 app_metadata = MetaData()
 
