@@ -1,12 +1,12 @@
 from fastapi import FastAPI
-##from router import router
+##from router.py import router.py
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy import Table, Column, Integer, String
 
 app = FastAPI()
-##app.include_router(router)
+##app.include_router(router.py)
 
-app_database = "postgresql://tvorca:hahaha@localhost:5432/application"
+app_database = "postgresql://tvorca:GaX3jpTCAv-?ftKo@localhost:5432/application"
 engine = create_engine(app_database)
 app_metadata = MetaData()
 
