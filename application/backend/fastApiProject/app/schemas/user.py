@@ -34,6 +34,7 @@ class User(UserBase):
 
 class UserOut(UserBase):
     email:str
+    id: int
     # Config to tell Pydantic to work with ORM objects
     class Config:
         from_attributes = True 

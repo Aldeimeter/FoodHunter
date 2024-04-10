@@ -25,4 +25,16 @@ sqlalchemy models
 ## schemas 
 pydantic schemas
 
+# Auth 
+
+To protect your route:
+* import api.dependencies as dependencies
+* add current_user: schemas.UserOut = Depends(dependencies.get_current_user) to your route arguments, if you don't need to use current_user, just keep it in arguments and don't use
+
+if you need user_id -> current_user.id should work fine.
+
+# Requirements
+
+There are new Requirements in req.txt, run 
+pip install -r req.txt 
 
