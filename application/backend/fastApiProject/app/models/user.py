@@ -1,9 +1,10 @@
-from sqlalchemy import Column, Integer, String, TIMESTAMP
+# models.user.py
+from sqlalchemy import Column, Integer, String, TIMESTAMP, ForeignKey
 from sqlalchemy.sql import func
-# from app.db.base_class import Base
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
 
 class User(Base):
     __tablename__ = "users"
@@ -15,4 +16,4 @@ class User(Base):
     created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
     # set timestamp on update
     updated_at = Column(TIMESTAMP(timezone=True), onupdate=func.now())
-    
+    workout_id = Column(Integer, ForeignKey("userWorkout.id"))

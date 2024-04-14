@@ -1,5 +1,5 @@
+# models.food.py
 from sqlalchemy import Column, Integer, String
-# from app.db.base_class import Base
 from sqlalchemy.ext.declarative import declarative_base
 
 

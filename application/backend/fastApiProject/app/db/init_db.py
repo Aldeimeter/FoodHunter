@@ -1,18 +1,19 @@
 # db/init_db.py
 from session import engine, SessionLocal
-# from .base_class import Base ##this won't work
 from app.models.user import User
 from app.models.exercises import Exercise
 from app.models.food import Food
+from app.models.userWorkout import UserWorkout
 
 
 def init_db() -> None:
     # create tables
-    Exercise.metadata.create_all(bind=engine)  # creating exercise table
     User.metadata.create_all(bind=engine)  # creating user table
+    Exercise.metadata.create_all(bind=engine)  # creating exercise table
     Food.metadata.create_all(bind=engine)
+    UserWorkout.metadata.create_all(bind=engine)
 
-    # inserting initital data into tables
+    # inserting initial data into tables
     session = SessionLocal()
 
     exercise1 = Exercise(name="Bench press", category="chest", description='Test Exercise 1')

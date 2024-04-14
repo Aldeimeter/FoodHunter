@@ -17,3 +17,4 @@ class Exercise(Base):
         self.name = name
         self.category = category
         self.description = description
+

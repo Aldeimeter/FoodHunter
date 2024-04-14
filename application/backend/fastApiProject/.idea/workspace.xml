@@ -7,17 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64cc5552-fefa-49d8-b99d-3e91f3bfd7f7" name="Changes" comment="pridane exercises do model packegu ale nejdu mi packege importovat">
-      <change afterPath="$PROJECT_DIR$/app/models/food.py" afterDir="false" />
+    <list default="true" id="64cc5552-fefa-49d8-b99d-3e91f3bfd7f7" name="Changes" comment="added food table exercise table with data">
+      <change afterPath="$PROJECT_DIR$/app/models/userWorkout.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/dependencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routers/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routers/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/base_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/base_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/exercises.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/exercises.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/food.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/food.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +173,7 @@
       <workItem from="1712994756046" duration="339000" />
       <workItem from="1712995103798" duration="7547000" />
       <workItem from="1713019162265" duration="5569000" />
-      <workItem from="1713110164984" duration="8152000" />
+      <workItem from="1713110164984" duration="17246000" />
     </task>
     <task id="LOCAL-00001" summary="pridane exercises do model packegu ale nejdu mi packege importovat">
       <option name="closed" value="true" />
@@ -188,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712915076690</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added food table exercise table with data">
+      <option name="closed" value="true" />
+      <created>1713119248756</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713119248756</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,11 +210,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pridane exercises do model packegu ale nejdu mi packege importovat" />
-    <option name="LAST_COMMIT_MESSAGE" value="pridane exercises do model packegu ale nejdu mi packege importovat" />
+    <MESSAGE value="added food table exercise table with data" />
+    <option name="LAST_COMMIT_MESSAGE" value="added food table exercise table with data" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fastApiProject$exercise.coverage" NAME="exercise Coverage Results" MODIFIED="1713023045466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/db" />
     <SUITE FILE_PATH="coverage/fastApiProject$fastApiProject.coverage" NAME="fastApiProject Coverage Results" MODIFIED="1713113160927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/fastApiProject$init_db.coverage" NAME="init_db Coverage Results" MODIFIED="1713119064362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/db" />
+    <SUITE FILE_PATH="coverage/fastApiProject$init_db.coverage" NAME="init_db Coverage Results" MODIFIED="1713128146433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/db" />
   </component>
 </project>
