@@ -2,12 +2,13 @@
 
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from db.session import get_db
+from app.db.session import get_db
 from fastapi import HTTPException, status, Depends
 import jwt
-from core import security
-from crud import user as crud_user
-import schemas.user as schemas
+from app.core import security
+from app.crud import user as crud_user
+import app.schemas.user as schemas
+
 
 def get_current_user(db:Session = Depends(get_db), token: str = Depends(security.oauth2_scheme)):
     credentials_exception = HTTPException(
