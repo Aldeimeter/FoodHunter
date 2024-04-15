@@ -7,7 +7,7 @@ import jwt
 
 SECRET_KEY = "d31c54ec74936d74ec45d4a1f3d00ffcee86bbb14551d69d2e192a1df751b63b"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30 
+ACCESS_TOKEN_EXPIRE_MINUTES = 1440 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="url")
 
