@@ -5,8 +5,9 @@ Team Workspace
 MTAA
 
 # Docker 
+```
 cd /application/backend/
-
+```
 ```
 docker build -t mtaa-backend-zaitsev .
 ```
