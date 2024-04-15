@@ -5,6 +5,7 @@ from db.base_class import Base
 from models.user import User
 from models.category import Category
 from models.food import Food
+from models.meal import Meal
 def init_db() -> None:
     # drop tables
     Base.metadata.drop_all(bind=engine)

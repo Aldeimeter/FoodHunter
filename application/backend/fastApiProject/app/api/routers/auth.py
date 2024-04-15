@@ -2,12 +2,12 @@ from fastapi import APIRouter, HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta 
-from app.core import security
-from app.crud import user as crud_user
-from app.db.session import get_db
-import app.schemas.user as schemas
+from core import security
+from crud import user as crud_user
+from db.session import get_db
+import schemas.user as schemas
 from pydantic import ValidationError
-import app.api.dependencies as dependencies
+import api.dependencies as dependencies
 router = APIRouter()
 
 

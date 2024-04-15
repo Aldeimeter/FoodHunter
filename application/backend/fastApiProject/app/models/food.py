@@ -25,6 +25,7 @@ class Food(Base):
     
     author_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     author = relationship("User", back_populates="food")
+    meals = relationship("Meal", back_populates="food")
     image_id = Column(String, nullable=True)  # Assuming the image is not mandatory
     # set timestamp on creation
     created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())

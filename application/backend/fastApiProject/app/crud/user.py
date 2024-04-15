@@ -2,9 +2,9 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import select, update, delete
 from fastapi.encoders import jsonable_encoder
-import app.models.user as models
-import app.schemas.user as schemas
-from app.core.hashing import Hasher
+import models.user as models
+import schemas.user as schemas
+from core.hashing import Hasher
 from typing import List, Union
 
 def get_user(db: Session, user_id: int) -> models.User:

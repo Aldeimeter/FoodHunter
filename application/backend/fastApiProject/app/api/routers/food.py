@@ -87,7 +87,7 @@ async def update_food_item(food_id: int,
     return food
 
 
-@router.delete("/{food_id}", response_model=FoodRead)
+@router.delete("/{food_id}", status_code=200)
 async def delete_food_item(food_id: int,
                            db: Session = Depends(get_db),
                            current_user: UserOut = Depends(dependencies.get_current_user)):
@@ -95,7 +95,7 @@ async def delete_food_item(food_id: int,
     if not food:
         raise HTTPException(status_code=404, detail="Food not found")
     crud.delete(db=db, food_id=food_id)
-    return food
+    return {"message": "Food deleted successfully"}
 
 @router.get("/images/{food_id}")
 async def get_food_image(food_id: int, 

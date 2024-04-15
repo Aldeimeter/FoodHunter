@@ -11,7 +11,7 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     # set timestamp on creation
     food = relationship("Food", back_populates="author")
+    meals = relationship("Meal", back_populates="user")
     created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
     # set timestamp on update
     updated_at = Column(TIMESTAMP(timezone=True), onupdate=func.now())
-    workout_id = Column(Integer, ForeignKey("userWorkout.id"))
