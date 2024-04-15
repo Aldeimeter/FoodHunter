@@ -14,4 +14,4 @@ class User(Base):
     created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
     # set timestamp on update
     updated_at = Column(TIMESTAMP(timezone=True), onupdate=func.now())
-    
+    workout_id = Column(Integer, ForeignKey("userWorkout.id"))

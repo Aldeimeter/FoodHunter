@@ -2,13 +2,14 @@ from fastapi import APIRouter, HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta 
-from core import security
-from crud import user as crud_user
-from db.session import get_db
-import schemas.user as schemas
+from app.core import security
+from app.crud import user as crud_user
+from app.db.session import get_db
+import app.schemas.user as schemas
 from pydantic import ValidationError
-import api.dependencies as dependencies
+import app.api.dependencies as dependencies
 router = APIRouter()
+
 
 @router.post("/login", summary="Token Authentication Endpoint")
 def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
@@ -36,6 +37,7 @@ def register_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         )
     user = crud_user.create_user(db=db, user=user)
     return schemas.UserOut.from_orm(user)
+
 
 @router.get("/me", response_model=schemas.UserOut, summary="Get Current User Endpoint")
 def get_current_user(current_user: schemas.UserOut = Depends(dependencies.get_current_user)):
