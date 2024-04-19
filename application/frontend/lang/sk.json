@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "LANGUAGE": "Jazyk",
+    "MODE": "Režim",
+    "SELECT": "Vybrať",
+    "CANCEL": "Zrušiť",
+    "SAVE": "Uložiť",
+    "SIGN_UP": "Zaregistrujte sa",
+    "SIGN_IN": "Prihláste sa",
+    "HOME":"Domov",
+    "SETTINGS": "Nastavenia",
+    "GREETING": "Vitajte v MealMate!",
+    "SHARE": "Zdieľať",
+    "BLOCK": "Zablokovať",
+ }
+}

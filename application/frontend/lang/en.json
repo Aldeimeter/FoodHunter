@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "LANGUAGE": "Language",
+    "MODE": "Mode",
+    "SELECT": "Select",
+    "CANCEL": "Cancel",
+    "SAVE": "Save",
+    "SIGN_UP": "Sign up",
+    "SIGN_IN": "Sign in",
+    "HOME":"Home",
+    "SETTINGS": "Settings",
+    "GREETING": "Welcome to MealMate!",
+    "SHARE": "Share",
+    "BLOCK": "Block",
+ }
+}
