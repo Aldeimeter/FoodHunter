@@ -12,5 +12,17 @@
     "GREETING": "Vitajte v MealMate!",
     "SHARE": "Zdieľať",
     "BLOCK": "Zablokovať",
+    "EMAIL_INPUT": "Zadajte svoj e-mail",
+    "PASSWORD_INPUT": "Zadajte svoje heslo",
+    "PASSWORD_CREATE_INPUT": "Vytvorte silné heslo",
+    "PASSWORD_AGAIN_INPUT": "Potvrďte heslo",
+    "INVALID_EMAIL_FORMAT": "Nesprávny formát e-mailu",
+    "PASSWORD_REQUIREMENTS": "Heslo musí mať aspoň 8 znakov a obsahovať aspoň jedno veľké písmeno, jedno malé písmeno a jednu číslicu.",
+    "PASSWORDS_NOT_MATCH": "Heslá nie sú zhodné",
+    "INVALID_FORMAT": "Nesprávny formát e-mailu alebo hesla",
+    "SIGN_UP_FAILURE": "Nepodarilo sa zaregistrovať",
+    "SIGN_IN_FAILURE": "Nepodarilo sa prihlásiť",
+    "INCORRECT_CREDENTIALS": "Nesprávny e-mail alebo heslo",
+    "EMAIL_IS_TAKEN": "E-mail je už zaregistrovaný. Vyberte si iný e-mail."
  }
 }

@@ -15,7 +15,8 @@ export const LanguageProvider = ({ children }) => {
 
         if (storedLanguage) {
           setSelectedLanguage(storedLanguage);
-
+        
+          console.log("Loaded language:", storedLanguage);
           i18next.changeLanguage(storedLanguage);
         }
       } catch (error) {
@@ -32,7 +33,7 @@ export const LanguageProvider = ({ children }) => {
     i18next.changeLanguage(languageValue);
 
     try {
-      await AsyncStorage.setItem('LANGUAGE', languageValue);
+      await AsyncStorage.setItem('LanguagePreference', languageValue);
 
       console.log('Saved language:', languageValue);
 

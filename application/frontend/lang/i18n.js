@@ -9,7 +9,6 @@ const resources = {
 };
 
 i18n
-
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
   // init i18next
@@ -19,5 +18,5 @@ i18n
     resources,
     lng: 'en',// default language to use.
   });
-
+console.log("i18n initialized");
 export default {i18n};
