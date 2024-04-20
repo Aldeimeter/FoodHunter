@@ -22,7 +22,7 @@ function StackNavigator() {
         headerTitleStyle: { fontFamily: "merriweather-bold"}, // Use the font family for header text from the theme
   
       }}>
-      <Stack.Screen name="Home" component={Greetings} options={{ title: t('GREETING') }} />
+      <Stack.Screen name="Greeting" component={Greetings} options={{ title: t('GREETING') }} />
       <Stack.Screen name="Sign up" component={SignUp} options={{ title: t('SIGN_UP') }} />
       <Stack.Screen name="Sign in" component={SignIn} options={{ title: t('SIGN_IN') }} />
     </Stack.Navigator>
