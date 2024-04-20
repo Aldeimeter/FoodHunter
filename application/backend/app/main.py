@@ -3,7 +3,8 @@ from api.routers.auth import router as auth
 from api.routers.category import router as category  
 from api.routers.food import router as food
 from api.routers.meal import router as meal
-import os
+from core.security import add_security_scheme
+
 
 app = FastAPI()
 app.include_router(auth, tags=["Auth"], prefix="/auth")
@@ -16,6 +17,8 @@ async def check_server():
     return {"message": "Server is reachable"}
 
 if __name__ == "__main__":
+    import os
+    import uvicorn
     if not os.path.exists('images'):
         os.makedirs('images')
-    uvicorn.run("main:app", host=os.getenv("HOST_IP"), port=8000, reload=True)
+    uvicorn.run("main:app", host=os.getenv("HOST_IP") or "192.168.100.44", port=8000, reload=True)

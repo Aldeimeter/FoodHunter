@@ -13,7 +13,7 @@ import { validateEmail, validatePassword, validatePasswordMatch} from '../core/v
 // base_url 
 import { base_url } from '../core/config';
 // encrypted storage 
-import { save } from '../core/userDataStorage';
+import { save, get } from '../core/userDataStorage';
 
 function SignIn ({ navigation }) {
   const { theme } = useTheme();
@@ -32,21 +32,13 @@ function SignIn ({ navigation }) {
 
   const [message, setMessage] = useState('');
   
-  const checkEmailValid = (text) => {
-    const valid = validateEmail(text);
-    setEmailValid(!valid); // assuming validateEmail returns an empty string if valid
-    setEmail(text);
-  };
-
-  const checkPasswordValid = (text) => {
-    const valid = validatePassword(text);
-    setPasswordValid(!valid);
-    setPassword(text);
-  };
 
   const handleSignIn = () => {
-    checkEmailValid(email.trim());
-    checkPasswordValid(password.trim());
+    const isEmailValid = !validateEmail(email.trim());
+    const isPasswordValid = !validatePassword(password.trim());
+
+    setEmailValid(isEmailValid);
+    setPasswordValid(isPasswordValid);
     setMessage('');
 
     if (!emailValid || !passwordValid) {
@@ -78,10 +70,11 @@ function SignIn ({ navigation }) {
       }
       return response.json();
     })
-    .then(data => {
+    .then(async (data) => {
       console.log(data);
       await save(data['token_type'], data['access_token']);
-      // navigation.navigate('Home');
+      await save('refresh_token',data['refresh_token']);
+      navigation.navigate('Greeting')   
     })
     .catch(error => {
       console.error(error);
