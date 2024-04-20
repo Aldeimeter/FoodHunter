@@ -12,5 +12,17 @@
     "GREETING": "Welcome to MealMate!",
     "SHARE": "Share",
     "BLOCK": "Block",
+    "EMAIL_INPUT": "Please enter your email",
+    "PASSWORD_INPUT": "Enter your password",
+    "PASSWORD_CREATE_INPUT": "Create a strong password",
+    "PASSWORD_AGAIN_INPUT": "Confirm password",
+    "INVALID_EMAIL_FORMAT": "Invalid email format",
+    "PASSWORD_REQUIREMENTS": "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.",
+    "PASSWORDS_NOT_MATCH": "Passwords do not match",
+    "INVALID_FORMAT": "Invalid email or password format",
+    "SIGN_UP_FAILURE": "Failed to sign up",
+    "SIGN_IN_FAILURE": "Failed to sign in",
+    "INCORRECT_CREDENTIALS": "Incorrect email or password",
+    "EMAIL_IS_TAKEN": "Email already registered. Please choose a different email."
  }
 }
