@@ -3,7 +3,6 @@ from api.routers.auth import router as auth
 from api.routers.category import router as category  
 from api.routers.food import router as food
 from api.routers.meal import router as meal
-from core.security import add_security_scheme
 
 
 app = FastAPI()
@@ -12,9 +11,9 @@ app.include_router(category, tags=["Category"])
 app.include_router(food, tags=["Food"], prefix="/food")
 app.include_router(meal, tags=["Meal"], prefix="/meal")
 
-@app.get("/check_health")
+@app.get("/health")
 async def check_server():
-    return {"message": "Server is reachable"}
+    return {"status": "ok"}
 
 if __name__ == "__main__":
     import os

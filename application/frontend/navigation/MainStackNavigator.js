@@ -1,15 +1,16 @@
+// ./navigation/MainStackNavigator.js
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../core/ThemeContext';
-import Greetings from '../screens/Greetings';
-import SignUp from '../screens/SignUp';
-import SignIn from '../screens/SignIn';
+import Home from '../screens/main/Home';
+import SignUp from '../screens/auth/SignUp';
+import SignIn from '../screens/auth/SignIn';
 
 const Stack = createNativeStackNavigator();
 
-function StackNavigator() {
+function MainStackNavigator() {
   const {t} = useTranslation();
 
   const { theme } = useTheme();
@@ -22,12 +23,10 @@ function StackNavigator() {
         headerTitleStyle: { fontFamily: "merriweather-bold"}, // Use the font family for header text from the theme
   
       }}>
-      <Stack.Screen name="Greeting" component={Greetings} options={{ title: t('GREETING') }} />
-      <Stack.Screen name="Sign up" component={SignUp} options={{ title: t('SIGN_UP') }} />
-      <Stack.Screen name="Sign in" component={SignIn} options={{ title: t('SIGN_IN') }} />
+      <Stack.Screen name="Home" component={Home} options={{ title: t('GREETING') }} />
     </Stack.Navigator>
   );
 
 }
 
-export default StackNavigator;
+export default MainStackNavigator;

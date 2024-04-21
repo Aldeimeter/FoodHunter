@@ -29,7 +29,7 @@ const ReusableInput = ({
   const handleValidation = (text) => {
     let errorMessage = '';
     if (validateInput) {
-      errorMessage = validateInput(text);
+      errorMessage = validateInput(text.trim());
       setError(errorMessage);
     }
     onChangeText(text);
@@ -60,6 +60,7 @@ const ReusableInput = ({
           maxLength={maxLength}
           secureTextEntry={secureTextEntry}
           onSubmitEditing={() => handleValidation(value)}
+          autoCapitalize="none" // Disable auto capitalization
         />
         {isPassword && (
             <TouchableOpacity onPress={togglePasswordVisibility} style={styles.icon}>

@@ -22,12 +22,10 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> List[models.User]
 
 
 def get_user_by_refresh_token(db: Session, refresh_token: str):
-    print(refresh_token)
     user = db.query(models.User).filter(
         models.User.refresh_token == refresh_token,
         models.User.refresh_token_expires_at > datetime.utcnow()
     ).first()
-    print(user)
     if user:
         return user
 

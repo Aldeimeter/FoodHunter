@@ -4,30 +4,20 @@ import React from 'react';
 import { TouchableOpacity, Text, View, StyleSheet, Dimensions } from 'react-native';
 // Language stuff
 import { useTranslation } from 'react-i18next';
-import LanguageToggle from "../components/LanguageToggle";
+import LanguageToggle from "../../components/LanguageToggle";
 // Theme stuff
-import { useTheme } from '../core/ThemeContext';
-import ThemeToggle from '../components/ThemeToggle';
+import { useTheme } from '../../core/ThemeContext';
+import ThemeToggle from '../../components/ThemeToggle';
 //
-import {base_url} from '../core/config'
+import {base_url} from '../../core/config'
 
 function Greetings({ navigation }) {
   const { theme } = useTheme();
+
   const styles = createStyles(theme);
 
-  // const checkServer = async () => {
-  //   try {
-  //     const response = await fetch(base_url + '/check_health');
-  //     if (response.ok) {
-  //       console.log('Server is reachable');
-  //     } else {
-  //       console.error('Server is not reachable');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error checking server:', error);
-  //   }
-  // };
   const {t} = useTranslation();
+
   return (
       <View style={styles.container}>
         <TouchableOpacity style={[styles.button, { width: Dimensions.get('window').width * 0.7 }]} onPress={() => navigation.navigate('Sign in')}>

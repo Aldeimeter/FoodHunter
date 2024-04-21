@@ -21,8 +21,6 @@ def get_current_user(db: Session = Depends(get_db), token: str = Security(securi
     try:
         payload = security.decode_access_token(token)
 
-        print(token)
-        print(payload)
         username: str = payload.get("sub")
         if username is None:
             raise credentials_exception

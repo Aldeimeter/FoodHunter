@@ -22,7 +22,12 @@
     "INVALID_FORMAT": "Invalid email or password format",
     "SIGN_UP_FAILURE": "Failed to sign up",
     "SIGN_IN_FAILURE": "Failed to sign in",
-    "INCORRECT_CREDENTIALS": "Incorrect email or password",
-    "EMAIL_IS_TAKEN": "Email already registered. Please choose a different email."
+    "INVALID_CREDENTIALS": "Incorrect email or password",
+    "EMAIL_IS_TAKEN": "Email already registered. Please choose a different email.",
+    "LOGOUT": "Log out",
+    "LOGOUT_FAILURE": "Nepodarilo sa odhlásiť",
+    "LOADING": "Please wait, something important is going on",
+    "ALREADY_LOGGED_OUT": "User is already logged out",
+    "ERR_NETWORK": "Server is unreachable, verify your network connectivity."
  }
 }

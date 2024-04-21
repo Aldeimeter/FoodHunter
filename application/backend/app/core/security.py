@@ -12,17 +12,6 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 1440
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 
-def add_security_scheme(app: FastAPI):
-    if app.openapi_schema is None:
-        app.openapi()  # This will generate the schema
-    app.openapi_schema["components"]["securitySchemes"] = {
-        "Bearer": {
-            "type": "http",
-            "scheme": "bearer",
-            "bearerFormat": "JWT",
-        }
-    }
-
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     to_encode = data.copy()

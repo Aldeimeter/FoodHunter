@@ -1,21 +1,21 @@
-// SignIn.js
+// SignUp.js
 // React stuff
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, TextInput, View, StyleSheet, Dimensions } from 'react-native';
 // Language stuff
 import { useTranslation } from 'react-i18next';
 // Theme stuff
-import { useTheme } from '../core/ThemeContext';
+import { useTheme } from '../../core/ThemeContext';
 // Own components 
-import ReusableInput from '../components/ReusableInput';
+import ReusableInput from '../../components/ReusableInput';
 // Validation functions 
-import { validateEmail, validatePassword, validatePasswordMatch} from '../core/validation';
-// base_url 
-import { base_url } from '../core/config';
-// encrypted storage 
-import { save, get } from '../core/userDataStorage';
+import { validateEmail, validatePassword, validatePasswordMatch} from '../../core/validation';
+// userService import 
+import { registerUser } from '../../api/userService';
+// Loading scene stuff 
+import { useLoading } from '../../core/LoadingContext';
 
-function SignIn ({ navigation }) {
+function SignUp({ navigation }) {
   const { theme } = useTheme();
 
   const styles = createStyles(theme);
@@ -26,60 +26,34 @@ function SignIn ({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const [emailValid, setEmailValid] = useState(false);
-  const [passwordValid, setPasswordValid] = useState(false);
+  const [passwordAgain, setPasswordAgain] = useState('');
 
   const [message, setMessage] = useState('');
   
+  const { showLoading, hideLoading } = useLoading();
 
-  const handleSignIn = () => {
-    const isEmailValid = !validateEmail(email.trim());
-    const isPasswordValid = !validatePassword(password.trim());
+  const handleSignUp = async () => {
+    try {
+        const isEmailValid = !validateEmail(email.trim());
+        const isPasswordValid = !validatePassword(password.trim());
+        const isPasswordsMatch = !validatePasswordMatch(password.trim(), passwordAgain.trim());
+        if (!isEmailValid || !isPasswordValid || !isPasswordsMatch) {
+            const errorMessage = !isEmailValid ? t('INVALID_FORMAT') :
+                                 !isPasswordValid ? t('INVALID_FORMAT') :
+                                 t('PASSWORDS_NOT_MATCH');
+            setMessage(errorMessage);
+            return;
+        }
 
-    setEmailValid(isEmailValid);
-    setPasswordValid(isPasswordValid);
-    setMessage('');
-
-    if (!emailValid || !passwordValid) {
-      console.log(emailValid);
-      console.log(passwordValid);
-      setMessage(t('INVALID_FORMAT'));
-      return; // Exit the function early
+        showLoading();
+        const userData = await registerUser(email, password);
+        hideLoading();
+        console.log('User registered:', userData);
+    } catch (error) {
+        console.error('Registration failed:', error);
+        setMessage(t(error.message));
+        hideLoading();
     }
-    const payload = {
-      username: email.toLowerCase(),
-      password: password.trim(),
-    };
-
-
-    const params = Object.keys(payload).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(payload[key])).join('&');
-
-    fetch(base_url + '/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-      },
-      body: params
-    })
-    .then(response => {
-      if (!response.ok) {
-        const error = response.headers.get('app-error')
-        throw new Error(t(error) || t('SIGN_IN_FAILURE'));
-      }
-      return response.json();
-    })
-    .then(async (data) => {
-      console.log(data);
-      await save(data['token_type'], data['access_token']);
-      await save('refresh_token',data['refresh_token']);
-      navigation.navigate('Greeting')   
-    })
-    .catch(error => {
-      console.error(error);
-      setMessage(error.message);
-    });
   };
 
   return (
@@ -97,14 +71,24 @@ function SignIn ({ navigation }) {
         style={[styles.input, { width: windowWidth * 0.7 }]}
         onChangeText={setPassword}
         value={password}
-        placeholder={t("PASSWORD_INPUT")}
-        autoComplete="current-password"
+        placeholder={t("PASSWORD_CREATE_INPUT")}
+        autoComplete="new-password"
         maxLength={255}
         secureTextEntry={true}
         validateInput={validatePassword}
         isPassword={true}
         />
-        <TouchableOpacity style={[styles.button, { width: windowWidth * 0.7 }]} onPress={() => handleSignIn()} >
+        <ReusableInput
+        style={[styles.input, { width: windowWidth * 0.7 }]}
+        onChangeText={setPasswordAgain}
+        value={passwordAgain}
+        placeholder={t("PASSWORD_AGAIN_INPUT")}
+        autoComplete="new-password"
+        maxLength={255}
+        secureTextEntry={true}
+        isPassword={true}
+        />
+        <TouchableOpacity style={[styles.button, { width: windowWidth * 0.7 }]} onPress={() => handleSignUp()} >
           <Text style={styles.buttonText}>{t('SIGN_IN')}</Text>
         </TouchableOpacity>
       {message && <Text>{message}</Text>}
@@ -149,4 +133,4 @@ const createStyles = (theme) => StyleSheet.create({
 });
 
 
-export default SignIn;
+export default SignUp;

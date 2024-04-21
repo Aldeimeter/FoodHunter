@@ -22,7 +22,12 @@
     "INVALID_FORMAT": "Nesprávny formát e-mailu alebo hesla",
     "SIGN_UP_FAILURE": "Nepodarilo sa zaregistrovať",
     "SIGN_IN_FAILURE": "Nepodarilo sa prihlásiť",
-    "INCORRECT_CREDENTIALS": "Nesprávny e-mail alebo heslo",
-    "EMAIL_IS_TAKEN": "E-mail je už zaregistrovaný. Vyberte si iný e-mail."
+    "INVALID_CREDENTIALS": "Nesprávny e-mail alebo heslo",
+    "EMAIL_IS_TAKEN": "E-mail je už zaregistrovaný. Vyberte si iný e-mail.",
+    "LOGOUT": "Odhlásiť sa",
+    "LOGOUT_FAILURE": "Nepodarilo sa odhlásiť",
+    "LOADING": "Prosím, počkajte, deje sa niečo dôležité",
+    "ALREADY_LOGGED_OUT": "Užívateľ už je odhlásený",
+    "ERR_NETWORK": "Server je nedostupný, overte si sieťové pripojenie."
  }
 }

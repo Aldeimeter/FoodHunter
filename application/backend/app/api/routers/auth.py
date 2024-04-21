@@ -57,11 +57,14 @@ def get_current_user(current_user: schemas.UserOut = Depends(dependencies.get_cu
     return current_user
 
 
-@router.post("/refresh", summary="Refresh Access Token")
+@router.get("/refresh", summary="Refresh Access Token")
 def refresh_access_token(refresh_token: str, db: Session = Depends(get_db)):
     user = crud_user.get_user_by_refresh_token(db, refresh_token) 
     if not user:
-        raise HTTPException(status_code=401, detail="Invalid or expired refresh token")
+        raise HTTPException(status_code=401,
+                            detail="Invalid or expired refresh token",
+                            headers={"app-error" : "TOKEN_EXPIRED"}
+                            )
 
     access_token_expires = timedelta(minutes=security.ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = security.create_access_token(data={"sub": user.email}, expires_delta=access_token_expires)
@@ -79,6 +82,7 @@ async def logout_and_revoke_refresh_token(current_user: schemas.UserOut = Depend
     if not success:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="Token already invalidated"
+            detail="Token already invalidated",
+            headers = {"app-error": "ALREADY_LOGGED_OUT"},
         )
     return {"message": "Logged out successfully, refresh token revoked"}
